@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Resume</title>
+</head>
+<body>
+<h1>Balupraveen Chandra Vattem</h1>
+<pre>
+1020 N Union Ave #1,	 
+Madison, SD 57042, 	
+Phone: (605)-291-6333,
+Email: bcvattem@pluto.dsu.edu.
+
+OBJECTIVE
+Seeking a challenging Entry Level Developer opportunity to work and learn as an Oracle Certified Java 2SE Programmer at a progressing organization with excellent values.
+
+SUMMARY OF QUALIFICATION
+?	Complete knowledge of SDLC in systems development.
+?	Experience in executing SQL queries.
+?	Possess profound Knowledge in Object Oriented Development and Design. 
+?	Involved in creating the Logical Data Modeling, creating use case diagrams, ER diagrams, Development, Testing and Implementation.
+?	Good knowledge in using SQL and PL/SQL to write Stored Procedures, Functions, Packages and Triggers. 
+?	Experience in analysis, design and development of MVC (MVC1, MVC2) pattern, Struts applications in J2EE Environment.
+?	Experience in Studying & Understanding Database Diagrams and Work Flow, ER Diagrams.
+?	 Excellent ability to interact with Business and Developers to understand technical design.
+?	Ability to collaborate with testers, project managers and other team members in testing complex projects.
+?	Experience working with team members to ensure testing deliverables are in compliance with the quality standards and deadlines.
+?	Expertise in soliciting client requirements through interviews, JAD sessions, workshops, and existing systems documentation and procedures.
+?	Creative and innovative in using IT for business processes, outstanding problem solving and analytical skills, excellent self-starter and integrative thinker.
+?	Consistently met project deadlines while producing high quality software releases. Excellent Team Member with good Communication and Interpersonal skills.
+?	Expertise in Software development Life cycle SDLC and Software test life cycle.
+?	Experience in preparing the training manual, check lists for scripting best practices, report generation and presentations.
+?	Experience in working in PL/SQL and Oracle environment.
+
+TECHNICAL SKILLS
+Languages	C, C++, Java 6 SE, Servlets, JSP, Hibernate, Spring 3, VB, XML, HTML, XHTML, CSS, JavaScript, Oracle 11g, SQL, PL/SQL.
+RDBMS		Oracle, Microsoft SQL Server, MS Access.
+GUI	Visual Basic 6.0, Applets, Swings
+Server Software	Apache Tomcat, Web Logic.
+Tools & Editors		Eclipse, Visual Studio, Rational Rose, Microsoft Office, Microsoft Project 2000, Borland,land, Oracle10G, SQL Server 2005, Knime, ExtendSim, Declare.
+Modeling	UML
+Protocols	TCP/IP, UDP, FTP, HTTP
+Platforms	MS Windows, DOS, UNIX, Linux
+ 
+BALUPRAVEEN CHANDRA VATTEM	Page 2 of 2
+EDUCATION
+Dakota State University – Madison, SD	January-2011-Current
+Master of Science in Information Systems	GPA: 3.92
+JNTU – Hyderabad, India	August-2005-May-2009
+Bachelor of technology in Electronics and Communications Engineering	GPA: 3.67
+
+PROFESSIONAL EXPERIENCE
+ZenQA Technologies	September 2009 – November 2010
+Role: Software Developer-Student 
+Responsibilities include:
+•	Performed database management and maintenance using Hibernate, JDBC.
+•	Responsible for designing and developing UI for the application using JSP.
+•	Developed Java beans and Action classes for the application.
+•	Generated test plans and technical release documentation for the internal technical writers. 
+•	Created unit tests and system tests to automate the developer testing process as a part of the product development lifecycle.
+•	Provided end user support for the lunch of the application and provided quick assist for installations.
+Environment:
+Java, JDBC, Servlet, JSP, Oracle Java Script, XML, MS Office, iReport, Eclipse Helios.
+
+Dakota State University, SD	August 2011 to December 2012
+Role: Graduate Assistant.
+Graduate Assistantship involves in working with professors at the Dakota State University and carryout research under or helps professors in their research work.
+Responsibilities include:
+•	Developed a sample Health Center Management System in Java.
+•	Created constraint based models using Declare tool, simulation models using ExtendSim and provided conceptual solutions for optimizing the workflow. 
+•	Performed Data mining tasks like Data modeling, Data Sampling, Retrieval and Analysis using KNIME.
+•	Research and Analysis on Clinical Process workflow in the health care industry.
+•	Updated version of software’s on the University servers.
+•	Created Simulation models for Hospitals to decrease patient waiting time.
+Environment: 
+Java, Java Script, Spring 3, JDBC, KNIME, Extend Sim, Oracle 10g, MS Access, MS Office, Eclipse Juno.
+</pre>
+<body>
+</html>

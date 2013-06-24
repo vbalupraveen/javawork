@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.maxSize" value="5406164" />
+	<package name="uploadAction" namespace="/upload" extends="struts-default">
+
+		<interceptors>
+			<interceptor name="loginRequired"
+				class="net.ulab.strutsadv.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="loginRequired" />
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="basicStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<action name="result" class="net.ulab.strutsadv.action.FileUploadAction">
+			<!-- <interceptor-ref name="fileUpload"> <param name="allowedTypes"> image/png,image/gif,image/jpeg 
+				</param> </interceptor-ref> -->
+			<interceptor-ref name="myStack" />
+			<result name="success">/view/success.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	</package>
+</struts>

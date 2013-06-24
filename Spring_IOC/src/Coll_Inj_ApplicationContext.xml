@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <!-- sending set of values to setter method with argument name="list" -->
+    <bean name="demoBean" class="com.ulab.SpringIOC_Coll_Inj.DemoBean">
+        <property name="list">
+            <list> 
+                <value>Balu</value>
+                <value>Balu</value>
+                <value>Balu</value>
+             </list>
+          </property>
+    </bean>
+    
+    <bean name="childDemo" parent="demoBean">
+        <property name="list">
+            <list merge="true"> 
+                <value>Balu</value>
+                <value>Balu</value>
+             </list>
+          </property>
+    </bean>
+    </beans>

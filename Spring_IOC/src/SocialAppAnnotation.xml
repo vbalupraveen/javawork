@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+    
+   <bean class="com.ulab.SocialAppAnnotation.FaceBook" id="fbBean">
+    	<property name="user" ref="user"></property>
+    </bean> 
+    <bean id="user" class="com.ulab.SocialAppAnnotation.User" scope="prototype">
+    <constructor-arg value="vbalupraaveen@gmail.com" index="0"></constructor-arg>
+	<constructor-arg value="SpringPWD" index="1"></constructor-arg>
+    </bean>
+    <!-- 
+    <bean class="com.ulab.SocialAppAnnotation.GooglePlus" id="gBean" ></bean>
+     -->
+    <context:annotation-config/>
+    <context:component-scan base-package="com.ulab.SocialAppAnnotation"></context:component-scan>
+    
+ </beans>

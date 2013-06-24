@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean class="com.ulab.SpringBFPP.Laptop" id="computerBean">
+    <property name="screen" value="${laptop.Screen}"></property>
+    <property name="os" value="${laptop.Os}"></property>
+    </bean>
+    <bean class="com.ulab.SpringBFPP.MyBeanFactoryPP"></bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations" value="springbfpp.properties"></property>
+    </bean>
+    </beans>

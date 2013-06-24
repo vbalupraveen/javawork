@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <!-- sending Triangle object as reference to setter method arg name="type" of Draw class-->
+    <bean id="drawBean" class="com.ulab.SpringIoc_2.Draw" autowire="byName">
+ 		<!--  
+ 			<property name="type"><ref local="type"/></property>
+    	-->
+    </bean>
+    <bean id="type" class="com.ulab.SpringIoc_2.Triangle"/>
+</beans>

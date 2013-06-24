@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="login" namespace="/login" extends="struts-default">
+		<action name="getResult" class="com.ulab.strutss.action.LoginAction">
+			<result name="success">/view/searchResult.jsp</result>
+			<result name="login">/view/login.jsp</result>
+			<!-- no data entered get back to input page -->
+			<result name="input">/view/login.jsp</result> 
+		</action>
+		<action name="get*" class="com.ulab.strutss.action.LoginAction"
+			method="get{1}">
+			<result name="success">/view/searchResult.jsp</result>
+			<result name="login">/view/login.jsp</result>
+			<result name="input">/view/login.jsp</result>
+		</action>
+	</package>
+</struts>

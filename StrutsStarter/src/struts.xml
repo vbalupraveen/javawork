@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<include file="interceptor.xml"></include>
+	<include file="login.xml"></include>
+	<package name="default" namespace="/game"
+		extends="struts-default,custom-interceptor">
+
+		<action name="getResult" class="com.ulab.strutss.action.GameAction">
+			<interceptor-ref name="user" />
+			<!-- unable to execute interceptor without default one. -->
+			<interceptor-ref name="params" />
+			<!-- <result name="success">/view/result.jsp</result> -->
+			<result name="success" type="dispatcher">
+				<param name="location">
+					/view/result.jsp
+				</param>
+			</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	</package>
+
+	<!-- if you don't want open jsp explicitly like "http://localhost:8080/StrutsStarter/searchResult.jsp" -->
+
+	<package name="search" namespace="/" extends="struts-default">
+		<action name="search*">
+			<result>/view/search{1}.jsp</result>
+		</action>
+	</package>
+
+</struts>

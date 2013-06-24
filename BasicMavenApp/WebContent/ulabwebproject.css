@@ -1,0 +1,19 @@
+﻿body {
+    font-family:Cambria;
+    margin: 0px;
+    background-color:Yellow;
+}
+h1 {
+    text-align: center;
+    color: yellow;
+    height: 50px;
+    margin: 0px;
+    background-color: blue;
+}
+span {
+    color: Red;
+}
+.button {
+    height: 30px;
+    width: 100px;
+}
