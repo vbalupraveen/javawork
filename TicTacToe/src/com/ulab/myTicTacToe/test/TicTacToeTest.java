@@ -11,7 +11,7 @@ public class TicTacToeTest {
 
 	@Test
 	public void matchPathsTest() {
-		assertFalse(ttt.matchPaths("4567", "123"));
+		assertFalse(ttt.matchPaths("4567", "123",3));
 	}
 	@Test
 	public void winnerTest(){

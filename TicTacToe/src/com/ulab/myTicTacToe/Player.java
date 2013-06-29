@@ -1,7 +1,6 @@
 package com.ulab.myTicTacToe;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /*Player class holds the player moves and details*/
@@ -25,7 +24,7 @@ public class Player {
 	public void setPath(String pos) {
 		path = "";
 		list.add(pos);
-		Collections.sort(list);
+		//Collections.sort(list);
 		for (String ele : list)
 			this.path += ele;
 	}
