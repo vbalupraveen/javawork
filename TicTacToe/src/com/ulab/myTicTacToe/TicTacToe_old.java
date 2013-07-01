@@ -1,6 +1,5 @@
 package com.ulab.myTicTacToe;
 
-/*CPU algorithm added*/
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -22,10 +21,8 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Point;
 
-public class TicTacToe extends JFrame implements ActionListener {
+public class TicTacToe_old extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	JFrame frame;
@@ -50,7 +47,7 @@ public class TicTacToe extends JFrame implements ActionListener {
 	String gamePath = "";
 	final int numOfClicks = 9;
 	int i = 0;
-	String playerLastStep = "", cpuLaststep = "";
+	String playerLastStep = "";
 
 	/**
 	 * Launch the application.
@@ -71,8 +68,7 @@ public class TicTacToe extends JFrame implements ActionListener {
 	/**
 	 * Create the frame.
 	 */
-	public TicTacToe() {
-		setLocation(new Point(455, 253));
+	public TicTacToe_old() {
 		setName("tttFrame");
 		setTitle("Tic Toc Toe");
 		frame = new JFrame("Game");
@@ -92,11 +88,6 @@ public class TicTacToe extends JFrame implements ActionListener {
 		welcomePanel.add(lblWelcomeToTic);
 		getContentPane().add(fieldPanel, BorderLayout.CENTER);
 		fieldPanel.setLayout(new GridLayout(3, 3, 3, 3));
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[] {
-				menuBar, mnNewGame, mntmPlayerVsPlayer, mntmPlayerVsCpu,
-				mntmExit, getContentPane(), welcomePanel, lblWelcomeToTic,
-				fieldPanel }));
-
 		/* create button */
 		for (int i = 0; i < 9; i++) {
 			button[i] = new MyButton();
@@ -107,6 +98,7 @@ public class TicTacToe extends JFrame implements ActionListener {
 			button[i].setText("");
 			fieldPanel.add(button[i]);
 		}
+		frame.setLocationRelativeTo(null);
 		clearAll();
 	}
 
@@ -195,24 +187,21 @@ public class TicTacToe extends JFrame implements ActionListener {
 			if (!pair.contains(anticipatedCombo.subSequence(i, i + 1)))
 				return anticipatedCombo.charAt(i);
 		}
-		return gamePath.charAt(0);
+		return 'N';
 	}
 
 	/* anticipates CPU's next step based one players's step */
-	public String anticipateStep(String step, Player who, String gamePath) {
+	public String anticipateStep(String step, String playerPath, String gamePath) {
 		String cpuStep = "";
 		String pair = "";
 		String anticipatedCombo = "";
-		String player = who.getName();
 		int gamePathLength = gamePath.length();
 		boolean found = false;
-		StringBuilder path = new StringBuilder(who.getPath());
+		StringBuilder path = new StringBuilder(playerPath);
 		if (gamePath.length() == 1)
 			cpuStep = randomOption(gamePath).toString();
 		else {
 			while (gamePath.contains(cpuStep) || gamePathLength > 0) {
-				if (!gamePath.contains(cpuStep))
-					break;
 				cpuStep = "";
 				pair = "";
 				for (int k = 0; k < path.length() - 1; k++) {
@@ -231,17 +220,9 @@ public class TicTacToe extends JFrame implements ActionListener {
 
 				gamePathLength--;
 				if (gamePathLength < 0) {
-					if (player.equals("CPU")) {
-						// anticipateStep("3", "0143", "0124673", "Player");
-						cpuStep = anticipateStep(playerLastStep, playerOne,
-								gamePath);
+					cpuStep = randomOption(gamePath).toString();
+					if (!gamePath.contains(cpuStep)) {
 						break;
-					} else {
-						cpuStep = randomOption(gamePath).toString();
-						if (!gamePath.contains(cpuStep)) {
-							break;
-
-						}
 					}
 				}
 			}
@@ -250,9 +231,11 @@ public class TicTacToe extends JFrame implements ActionListener {
 	}
 
 	/* CPU selecting option */
-	public void cpuTurn(Player cpu, String playerLastStep, String cpuLastStep) {
-		Integer anticipatedLoc = Integer.parseInt(anticipateStep(cpuLastStep,
-				cpu, gamePath));
+	public void cpuTurn(Player cpu, String playerLastStep) {
+		// Integer anticipatedLoc=randomOption(gamePath);
+		Integer anticipatedLoc = Integer.parseInt(anticipateStep(
+				playerLastStep, playerOne.getPath(), gamePath));
+		System.out.println(anticipatedLoc);
 		myButton.setLoc(anticipatedLoc);
 		button[anticipatedLoc].setText("O");
 		button[anticipatedLoc].setEnabled(false);
@@ -270,9 +253,8 @@ public class TicTacToe extends JFrame implements ActionListener {
 				playerOne.setPath(myButton.getLoc().toString());
 				playerLastStep = myButton.getLoc().toString();
 			} else if (playerTwo.getName().equals("CPU")) {
-				cpuTurn(playerTwo, playerLastStep, cpuLaststep);
+				cpuTurn(playerTwo, playerLastStep);
 				playerTwo.setPath(myButton.getLoc().toString());
-				cpuLaststep = myButton.getLoc().toString();
 			} else {
 				button[myButton.getLoc()].setText("O");
 				button[myButton.getLoc()].setEnabled(false);

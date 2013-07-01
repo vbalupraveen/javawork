@@ -6,7 +6,7 @@ import java.util.List;
 /*Player class holds the player moves and details*/
 public class Player {
 	String name;
-	String path;
+	String path="";
 	List<String> list = new ArrayList<String>();
 
 	public Player(String name) {

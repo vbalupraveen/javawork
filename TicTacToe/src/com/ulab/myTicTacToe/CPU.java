@@ -12,13 +12,15 @@ public class CPU {
 			if (!pair.contains(anticipatedCombo.subSequence(i, i + 1)))
 				return anticipatedCombo.charAt(i);
 		}
-		return 'N';
+		return '6';
 	}
 
-	public String anticipateStep(String step, String playerPath, String gamePath) {
+	public String anticipateStep(String step, String playerPath,
+			String gamePath, String who) {
 		String cpuStep = "";
 		String pair = "";
 		String anticipatedCombo = "";
+		String player=who;
 		int gamePathLength = gamePath.length();
 		boolean found = false;
 		StringBuilder path = new StringBuilder(playerPath);
@@ -26,6 +28,8 @@ public class CPU {
 			cpuStep = randomOption(gamePath).toString();
 		else {
 			while (gamePath.contains(cpuStep) || gamePathLength > 0) {
+				if(!gamePath.contains(cpuStep))
+					break;
 				cpuStep = "";
 				pair = "";
 				for (int k = 0; k < path.length() - 1; k++) {
@@ -41,13 +45,20 @@ public class CPU {
 						break;
 				}
 				cpuStep += getStep(anticipatedCombo, pair);
-
+				
 				gamePathLength--;
 				System.out.println(cpuStep + "   " + pair);
 				if (gamePathLength < 0) {
-					cpuStep = randomOption(gamePath).toString();
-					if (!gamePath.contains(cpuStep)) {
+					if (player.equals("Balu")) {
+						cpuStep=	anticipateStep("4", "14", "146", "Player");
+						//anticipateStep(playerLastStep, player.getPath, gamePath,player.getName);
 						break;
+					} else {
+						cpuStep = randomOption(gamePath).toString();
+						if (!gamePath.contains(cpuStep)) {
+							break;
+
+						}
 					}
 				}
 			}
@@ -56,7 +67,8 @@ public class CPU {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new CPU().anticipateStep("6", "36", "306"));
+		System.out
+				.println(new CPU().anticipateStep("6", "6", "146", "Balu"));
 	}
 
 	public static Integer randomOption(String path) {
